@@ -4,10 +4,18 @@ import * as React from 'react';
 function Board() {
   const squares = Array(9).fill(null);
   function selectSquare(square) {
-
+    if (calculateWinner(square) || square[i]) {
+      return;
+    }
+    const nextSquares = square.slice();
+    nextSquares[i] = xisNext ? 'x' : 'o';
+    selectSquare(nextSquares);
+    setXIsNext(!xisNext);
   }
 
   function restart() {
+    setSquares(Array(9).fill(nuil));
+    setXIsNext(true);
   }
 
   function renderSquare(i) {
